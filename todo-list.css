@@ -1,0 +1,60 @@
+.insert-list{
+		width: 90%;
+		margin: 0 auto;
+	}
+	.todo-body{
+		width: 70%;
+		margin: 0 auto;
+		/*background-color: blue;*/
+	}
+	.input-data{
+		border: 1px solid black;
+		border-radius: 5px;
+		width: 600px;
+		height: 40px;
+	}
+	.add-btn{
+		border: 1px solid black;
+		border-radius: 5px;
+		background-color: green;
+		height: 42px;
+		width: 100px;
+	}
+	ul{
+		padding: 0;
+		margin: 0;
+	}
+	ul li{
+		background-color: red;
+		list-style: none;
+		display: flex;
+		/*height: 50px;*/
+		width: 100%;
+		margin: 10px auto;
+		justify-content: center;
+	}
+	ul li .check-btn{
+		flex-basis: 5%;
+		text-align: center;
+		align-self: center;
+		/*background-color: yellow;*/
+	}
+	ul li .input-list{
+		flex-basis: 75%;
+	}
+	ul li p{
+		font-size: 18px;
+	}
+	ul li .cancel-img img{
+		width: 10%;
+	}
+	ul li .cancel-img{
+		flex-basis: 20%;
+		align-self: center;
+		text-align: end;
+		padding-right: 20px;
+	}
+	ul li .check-btn input{
+		
+	}
+	
