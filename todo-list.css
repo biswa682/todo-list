@@ -3,9 +3,9 @@
 		margin: 0 auto;
 	}
 	.todo-body{
-		width: 70%;
-		margin: 0 auto;
-		/*background-color: blue;*/
+			width: 70%;
+			margin: 0 auto;
+			/*background-color: blue;*/
 	}
 	.input-data{
 		border: 1px solid black;
@@ -32,6 +32,7 @@
 		width: 100%;
 		margin: 10px auto;
 		justify-content: center;
+		cursor: move;
 	}
 	ul li .check-btn{
 		flex-basis: 5%;

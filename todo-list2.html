@@ -4,7 +4,7 @@
 	<title>Ok</title>
 	<link rel="stylesheet" type="text/css" href="todo-list.css">
 </head>
-<body>
+<body >
 
 	<div id="todo-body" class="todo-body">
 		<div class="insert-list">
@@ -44,19 +44,18 @@
 			para.style.setProperty("text-decoration","none");
 		}
 	}
-
 	function deleteList(event){
 		var no = event.parentNode.parentNode;
 		no.remove();
 	}
-	function checkListNo(){
-		// var un_list = document.getElementById('todo-body');
-		var event = document.getElementById("list-item");
-		alert(event.childNodes.length);
-		var li = document.getElementsByTagName('li');
-		alert(li.childNodes[0]);
-	}
 
+	
+	// var ul_tag_value = document.getElementById("list-item");
+	// ul_tag_value.addEventListener("click", checkListNo, false);
+	
+	function checkListNo(e){
+		
+	}
 
 </script>
 </html>

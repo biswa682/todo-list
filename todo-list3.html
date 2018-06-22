@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="todo-list3.css">
+</head>
+<body>
+	<div id="todo-body" class="todo-body">
+		<div class="insert-list">
+			<input type="text" name="input-data" id="input-data" class="input-data">
+			<button id="add-btn" class="add-btn">ADD</button>
+		</div>
+		<ul id="list-item">
+			<!-- <li>
+				<input type='checkbox' name='work-done-btn' class='work-done-btn' id='work-done-btn'>
+				<p id='input-para'>iuhugofihegjj fiuee rii uiuhh iugg oiu u uwe rqhuoh ruhfusafk uewuii iodshf oh iosa hioia hi isagousd go oe hoe oisd fods fds g is ids nfdss g a i sd gasn  nasddn gsg asg lsgslkg s dkfg g</p>
+				<i class="fa fa-close" style="font-size:24px"></i>
+			</li> -->
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	var valueNo = 0;
+	function addList(){
+		var input_data = document.getElementById('input-data');
+		if(input_data.value != ""){
+			var li_tag = document.createElement('li');
+			// alert(li_tag);
+			li_tag.className = 'list-elements';
+			li_tag.setAttribute("value",++valueNo);
+			
+			var checkbox = document.createElement('input');
+			checkbox.type = 'checkbox';
+			checkbox.name = 'work-done-btn';
+			checkbox.id = 'work-done-btn';
+			checkbox.className = 'work-done-btn';
+
+			var para = document.createElement('p');
+			para.id = 'input-para';
+			var text = document.createTextNode(input_data.value);
+			para.appendChild(text);
+
+
+			var cancel = document.createElement('i');
+			cancel.className = 'fa fa-close';
+			cancel.style = 'font-size:24px';
+
+			li_tag.appendChild(checkbox);
+			li_tag.appendChild(para);
+			li_tag.appendChild(cancel);
+			
+			var ul_tag = document.getElementById('list-item');
+			ul_tag.appendChild(li_tag);
+			
+			input_data.value = "";
+		}
+		else{
+			
+		}
+	}
+
+	function addStroke(event){
+		var checkbox = event.target.tagName;
+		if( checkbox == 'INPUT'){
+			var para = event.target.nextSibling;
+			if(event.target.checked == true){
+				para.style.setProperty("text-decoration","line-through");
+			}
+			else{
+				para.style.setProperty("text-decoration","none");
+			}
+
+		}
+	}
+
+	function deleteList(event){
+		var no = event.target.tagName;
+		if(no == 'I'){
+			var main_list = event.target.parentNode;
+			main_list.remove();
+		}
+	}
+
+	document.getElementById('add-btn').addEventListener("click", addList);
+	document.getElementById('list-item').addEventListener("click", addStroke);
+	document.getElementById('list-item').addEventListener("click", deleteList);
+</script>
+</html>
