@@ -29,7 +29,7 @@
 			// alert(li_tag);
 			li_tag.className = 'list-elements';
 			li_tag.setAttribute("value",++valueNo);
-			
+			li_tag.setAttribute("draggable","true");
 			var checkbox = document.createElement('input');
 			checkbox.type = 'checkbox';
 			checkbox.name = 'work-done-btn';
@@ -40,7 +40,6 @@
 			para.id = 'input-para';
 			var text = document.createTextNode(input_data.value);
 			para.appendChild(text);
-
 
 			var cancel = document.createElement('i');
 			cancel.className = 'fa fa-close';
@@ -81,9 +80,127 @@
 			main_list.remove();
 		}
 	}
+	// }
+	// var selectedElement = null;
+	// function dragPossible(event){
+	// 	event.preventDefault();
+	// 	var currentList = event.target;
+	// 	if(event.target.tagName === selectedElement.tagName && event.target !== selectedElement){
+	// 		//var nextSiblingValue = event.target.nextSibling;
+	// 		currentList.style.visibility = 'hidden';
+	// 		// selectedElement.remove();
+	// 		// currentList.style.visibility = 'visible';
+			
+	// 	}
+	// }
 
-	document.getElementById('add-btn').addEventListener("click", addList);
+	// function dragUp(event){
+	// 	selectedElement = event.target;
+	// 	event.dataTransfer.setData('text/html', event.target);
+		
+	// }
+
+	// function dragDown(event){
+	// 	var dropEl = event.target;
+	// 	// var main_un = document.getElementById('list-item');
+	// 	if(dropEl != selectedElement){
+			
+	// 		// if(dropEl.tagName == 'LI' || dropEl.tagName == 'P' || dropEl.tagName == 'I'){
+	// 		// 	dropEl = dropEl.parentNode;
+	// 		// }
+
+	// 		// dropEl.parentNode.removeChild(selectedElement);
+	// 		// dropEl.parentNode.insertBefore(selectedElement, dropEl);
+	// 		// var value = event.dataTransfer.getData('text/html');
+	// 		// dropEl.parentNode.removeChild(selectedElement);
+	// 		// console.log(dropEl.nextSibling);
+	// 		// if(dropEl.nextSibling){
+	// 		// 	console.log("available");
+	// 		// }
+	// 		// else{
+	// 		// 	console.log("not available");
+	// 		// }
+	// 	}
+
+	// }
+
+	
+	// var selectedElement = null;
+	// function dragEnter(event){
+	// 	event.preventDefault();
+	// 	var currentList = event.target;
+	// 	if(event.target.tagName === selectedElement.tagName && event.target !== selectedElement){			
+	// 		currentList.style.visibility = 'hidden';
+	// 	}
+	// }	
+	var selectedElement = null;
+	var currentElement = null;
+	function dragStart(event){
+		// console.log(event.target);
+		event.dataTransfer.setData('text/html', event.target);
+		selectedElement = event.target;
+	}
+
+	function dragEnter(event){
+		// event.preventDefault();
+		// if(currentElement != null){
+		// 	if(event.target != currentElement){
+		// 		currentElement.style.visibility = 'visible';
+		// 	}
+		// }
+
+
+		// if(event.target.tagName === selectedElement.tagName && event.target !== selectedElement){
+		// 	event.target.style.visibility = 'hidden';			
+		// }
+
+
+
+		// currentElement = event.target;
+	}
+
+	function dragOver(event){
+		event.preventDefault();
+		event.stopPropagation();
+	}
+
+	function dragLeave(event){
+		event.preventDefault();
+		event.stopPropagation();
+	//	if(event.target.tagName === selectedElement.tagName && event.target !== selectedElement){
+			
+			// console.log(event.target);
+			
+	//	}
+	}
+
+	function dragEnd(event){
+		// console.log(event.target);	
+	}
+
+	function dropElement(event){
+		// alert(event.target);
+		var newList = selectedElement;
+		var currentDropBox = null;
+		if(event.target.tagName == 'INDEX' || event.target.tagName == 'P' || event.target.tagName == 'I'){
+			currentDropBox = event.target.parentNode;
+		}
+		else if(event.target.tagName == 'LI'){
+			currentDropBox = event.target;
+		}
+
+		if(currentDropBox.tagName === selectedElement.tagName && currentDropBox !== selectedElement){
+			selectedElement.remove();
+			currentDropBox.parentNode.insertBefore(newList, currentDropBox.nextSibling);
+		}
+	}
+	document.getElementById('input-data').addEventListener("keyup",addList);
+	// document.getElementById('add-btn').addEventListener("click", addList);
 	document.getElementById('list-item').addEventListener("click", addStroke);
 	document.getElementById('list-item').addEventListener("click", deleteList);
+	document.getElementById('list-item').addEventListener("dragstart", dragStart);
+	document.getElementById('list-item').addEventListener("dragover", dragOver);
+	// document.getElementById('list-item').addEventListener("dragleave", dragLeave);
+	document.getElementById('list-item').addEventListener("drop", dropElement);
 </script>
 </html>
