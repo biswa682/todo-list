@@ -1,61 +1,83 @@
-.insert-list{
-		width: 90%;
+.todo-body{
+		width: 70%;
 		margin: 0 auto;
-	}
-	.todo-body{
-			width: 70%;
-			margin: 0 auto;
-			/*background-color: blue;*/
-	}
-	.input-data{
-		border: 1px solid black;
-		border-radius: 5px;
-		width: 600px;
-		height: 40px;
-	}
-	.add-btn{
-		border: 1px solid black;
-		border-radius: 5px;
-		background-color: green;
-		height: 42px;
-		width: 100px;
-	}
-	ul{
-		padding: 0;
-		margin: 0;
-	}
-	ul li{
-		background-color: red;
-		list-style: none;
-		display: flex;
-		/*height: 50px;*/
-		width: 100%;
-		margin: 10px auto;
-		justify-content: center;
-		cursor: move;
-	}
-	ul li .check-btn{
-		flex-basis: 5%;
-		text-align: center;
-		align-self: center;
-		/*background-color: yellow;*/
-	}
-	ul li .input-list{
-		flex-basis: 75%;
-	}
-	ul li p{
-		font-size: 18px;
-	}
-	ul li .cancel-img img{
-		width: 10%;
-	}
-	ul li .cancel-img{
-		flex-basis: 20%;
-		align-self: center;
-		text-align: end;
-		padding-right: 20px;
-	}
-	ul li .check-btn input{
-		
-	}
-	
+		/*background-color: blue;*/
+}
+.insert-list{
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+.progress-bar-body{
+	height: 30px;
+	width: 100%;
+	/*background-color: green;*/
+	border: 2px solid black;
+	margin: 20px 0;
+	position: relative;
+	text-align: center;
+}
+.progress-bar-value{
+	position: absolute;
+	left: 50%;
+	margin-top: 5px;
+}
+.progress-bar{
+	height: 30px;
+	background-color: #5add77;
+	width: 0;
+}
+
+
+.input-data{
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 600px;
+	height: 40px;
+	padding-left: 10px;
+	font-size: 20px;
+}
+.add-btn{
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: green;
+	height: 42px;
+	width: 100px;
+	/*float: right;*/
+}
+ul{
+	padding: 0;
+	margin: 0;
+	/*background-color: blue;*/
+	/*position: relative;*/
+}
+ul li{
+	/*position: absolute;*/
+	/*background-color: red;*/
+	list-style: none;
+	display: flex;
+	width: 100%;
+	margin: 10px auto;
+	cursor: move;
+	border: 2px solid black;
+}
+ul li:{
+	background-color: yellow;
+}
+
+ul li input{
+	flex: 1;
+	align-self: center;
+	outline: none;
+}
+ul li p{
+	flex: 8;
+	font-size: 18px;
+}
+
+ul li i{
+	align-self: center;
+	text-align: center;
+	flex: 1;
+	 
+}

@@ -2,94 +2,25 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="todo-list.css">
-</head>
-<style type="text/css">
 	
-</style>
-<body>
-
+</head>
+<body onload = "loadOnStart()" >
 	<div id="todo-body" class="todo-body">
 		<div class="insert-list">
+			<div class="progress-bar-body">
+				<div class="progress-bar" id="progress-bar">
+					<p class="progress-bar-value" id="progress-bar-value"></p>	
+				</div>
+			</div>
 			<input type="text" name="input-data" id="input-data" class="input-data">
 			<button id="add-btn" class="add-btn">ADD</button>
 		</div>
 		<ul id="list-item">
-			<!-- <li>
-				<div class='check-btn'>
-					<input type='checkbox' name='work-done-btn' class='work-done-btn' id='work-done-btn' >
-				</div>
-				<div class="input-list">
-					<p id='input-para'>fasffasnlaf</p>
-				</div>
-				<div class='cancel-img'>
-					<img src='img/c2.png' id="delete-para">
-				</div>
-			</li>
-
-			<li>
-				<div class='check-btn'>
-					<input type='checkbox' name='work-done-btn' class='work-done-btn' id='work-done-btn' >
-				</div>
-				<div class="input-list">
-					<p id='input-para'>jvbjfbvgkjafga asdifjaosi iopafjoiasjfl fa fiasfjiaf aisf iaofioasfhnanfoiasfn idhsfoasnfnafosfnoai fiaf oiafoifdskbdksajgk</p>
-				</div>
-				<div class='cancel-img'>
-					<img src='img/c2.png' id="delete-para">
-				</div>
-			</li> -->
-
-			<!-- <li>
-				<div class='check-btn'><input type='checkbox' name='work-done-btn' class='work-done-btn' id='work-done-btn' onclick="strikeButton(this)"></div><div class='input-list'><p id='input-para'>"+input_data.value+"</p></div><div class='cancel-img'><img src='img/c2.png' id='delete-para'></div>
-			</li>
-			<li>
-				<div class='check-btn'><input type='checkbox' name='work-done-btn' class='work-done-btn' id='work-done-btn' onclick="strikeButton(this)"></div><div class='input-list'><p id='input-para'>"+input_data.value+"</p></div><div class='cancel-img'><img src='img/c2.png' id='delete-para'></div>
-			</li> -->
+			
 		</ul>
-		
 	</div>
+	<script type="text/javascript" src="todo-list.js"></script>	
 </body>
-<script type="text/javascript">
-	document.getElementById('add-btn').onclick = function(){
-		alert();
-	}
-	// alert("OK");
-	// var valueNo = 0;
-	function addList(){
-		alert("OK");
-		// var input_data = document.getElementById('input-data');
-		// var li_tag = document.createElement('li');
-		// li_tag.className = 'list-elements';
-		// // li_tag.setAttribute("value",++valueNo);
-		// li_tag.innerHTML = "<div class='check-btn'><input type='checkbox' name='work-done-btn' class='work-done-btn' id='work-done-btn' ></div><div class='input-list'><p id='input-para'>"+input_data.value+"</p></div><div class='cancel-img'><img src='img/c2.png' id='delete-para'></div>";
-		// // var p_tag = document.createElement('p');
-		// // var add_data = document.createTextNode(input_data.value);
-		// // p_tag.appendChild(add_data);
-		// // var input_tag = document.createElement('input');
-		// // var delete_tag = document.createElement('h2');
-		// // li_tag.appendChild(p_tag);
-		// var ul_tag = document.getElementById('list-item');
-		// ul_tag.appendChild(li_tag);
-		// input_data.value = "";
-	}
-
-	function strikeButton(check){
-		// var check = document.getElementById("work-done-btn");
-		// var para = document.getElementById("input-para");
-		check.parentNode.
-		if(check.checked==true){
-			para.style.setProperty("text-decoration","line-through");
-		}
-		else{
-			para.style.setProperty("text-decoration","none");
-		}
-	}
-
-	document.getElementById("delete-para").onclick = function(){
-		// var para = document.getElementById("input-para");
-		// para.parentNode.parentNode.remove();
-		// para.remove();
-		alert("OK")
-	}
-</script>
 </html>
